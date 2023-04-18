@@ -1,0 +1,25 @@
+|test
+x[0] => ~NO_FANOUT~
+x[1] => ~NO_FANOUT~
+x[2] => ~NO_FANOUT~
+x[3] => ~NO_FANOUT~
+x[4] => ~NO_FANOUT~
+x[5] => ~NO_FANOUT~
+x[6] => ~NO_FANOUT~
+x[7] => ~NO_FANOUT~
+x[8] => ~NO_FANOUT~
+x[9] => ~NO_FANOUT~
+VGA_R[0] <= <VCC>
+VGA_R[1] <= <VCC>
+VGA_R[2] <= <VCC>
+VGA_R[3] <= <VCC>
+VGA_G[0] <= <VCC>
+VGA_G[1] <= <VCC>
+VGA_G[2] <= <VCC>
+VGA_G[3] <= <VCC>
+VGA_B[0] <= <VCC>
+VGA_B[1] <= <VCC>
+VGA_B[2] <= <VCC>
+VGA_B[3] <= <VCC>
+
+
