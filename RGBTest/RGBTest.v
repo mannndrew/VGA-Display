@@ -19,8 +19,8 @@ reg [9:0] CounterY;
 //reg [3:0] G;
 //reg [3:0] B;
 
-wire CounterXmaxed = (CounterX == 800); // 16 + 48 + 96 + 640
-wire CounterYmaxed = (CounterY == 525); // 10 + 2 + 33 + 480
+wire CounterXmaxed = (CounterX == 799); // 16 + 48 + 96 + 640
+wire CounterYmaxed = (CounterY == 524); // 10 + 2 + 33 + 480
 wire clk_slow;
 wire inDisplayArea;
 
@@ -50,8 +50,8 @@ clock_div clock_div_inst
 		
 	end
 	
-	assign hsync = ~(CounterX > (640 + 16) && (CounterX < (640 + 16 + 96)));   // active for 640 clocks
-	assign vsync = ~(CounterY > (480 + 10) && (CounterY < (480 + 10 + 2)));   // active for 480 clocks
+	assign hsync = (CounterX <= (640 + 16) || ((640 + 16 + 96) <= CounterX));   // active for 640 clocks
+	assign vsync = (CounterY <= (480 + 10) || ((480 + 10 + 2) <= CounterY));   // active for 480 clocks
 	assign inDisplayArea = (CounterX < 640) && (CounterY < 480);
 	
 	
