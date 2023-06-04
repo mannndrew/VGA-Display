@@ -7,9 +7,12 @@
 *.mat
 *.bak
 *.qws
+*.qip
 
 db/
 output_files/
 incremental_db/
 simulation/
+greyboxy_tmp/
 .qsys_edit/
+
