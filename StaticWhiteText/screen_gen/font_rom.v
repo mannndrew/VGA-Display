@@ -7,7 +7,7 @@
 
 module font_rom
 (
-	input wire [10:0] addr, //[10:4] for ASCII char code, [3:0] for choosing what row to read on a given character code  
+	input [10:0] addr, //[10:4] for ASCII char code, [3:0] for choosing what row to read on a given character code  
 	output [7:0] data
 );
    
