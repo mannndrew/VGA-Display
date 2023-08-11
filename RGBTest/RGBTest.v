@@ -15,10 +15,6 @@ module RGBTest
 reg [9:0] CounterX;
 reg [9:0] CounterY;
 
-//reg [3:0] R;
-//reg [3:0] G;
-//reg [3:0] B;
-
 wire CounterXmaxed = (CounterX == 799); // 16 + 48 + 96 + 640
 wire CounterYmaxed = (CounterY == 524); // 10 + 2 + 33 + 480
 wire clk_slow;
@@ -53,34 +49,6 @@ clock_div clock_div_inst
 	assign hsync = (CounterX <= (640 + 16) || ((640 + 16 + 96) <= CounterX));   // active for 640 clocks
 	assign vsync = (CounterY <= (480 + 10) || ((480 + 10 + 2) <= CounterY));   // active for 480 clocks
 	assign inDisplayArea = (CounterX < 640) && (CounterY < 480);
-	
-	
-//	always @(posedge clk_slow) begin
-//		
-//		if (inDisplayArea) begin
-//		
-//			if (0 <= CounterX && CounterX <= 213) 
-//				begin R = 4'b1111; G = 4'b0000; B = 4'b0000; end
-//				
-//			else if (214 <= CounterX && CounterX <= 428) 
-//				begin R = 4'b0000; G = 4'b1111; B = 4'b0000; end
-//				
-//			else
-//				begin R = 4'b0000; G = 4'b0000; B = 4'b1111; end
-//		
-//		end
-//		
-//		else 
-//		
-//			begin R = 4'b0000; G = 4'b0000; B = 4'b0000; end
-//			
-//	end
-//	 
-//	
-//	assign red = R;
-//	assign green = G;
-//	assign blue = B;
-
 
 	wire left 	= (0 <= CounterX && CounterX <= 213 && inDisplayArea);
 	wire middle = (214 <= CounterX && CounterX <= 428 && inDisplayArea);
